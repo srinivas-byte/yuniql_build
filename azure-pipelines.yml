@@ -1,0 +1,46 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+stages:
+
+- stage: deployToDev
+  displayName: Deploy to DEV  
+  jobs:
+    - deployment: dev
+      displayName: Deploy to aws-postgresql
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - checkout: self
+
+            - task: CmdLine@2
+              displayName: clone postgresql samples repo
+              inputs:
+                script: |
+                  git clone https://github.com/srinivas-byte/yuniql_build $(Build.SourcesDirectory)\yuniql
+            - task: UseYUNIQLCLI@1
+              displayName: yuniql install
+              inputs:
+                version: 'latest'
+
+            - task: EraseYuniqlCLI@1
+              displayName: yuniql erase
+              inputs:
+                version: 'latest'
+                connectionString: 'Server=queenie.db.elephantsql.com;Port=5432;Database=akccflrf;User=akccflrf;Password=iwH0hwGBezoRe-CiwaSJsg-OOXbRWq8i'
+                workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
+                targetPlatform: 'postgresql'
+                additionalArguments: '--force --debug'
+
+            - task: RunYUNIQLCLI@1
+              displayName: yuniql run
+              inputs:
+                version: 'latest'
+                connectionString: 'Server=queenie.db.elephantsql.com;Port=5432;Database=akccflrf;User=akccflrf;Password=iwH0hwGBezoRe-CiwaSJsg-OOXbRWq8i'
+                workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
+                targetPlatform: 'PostgreSql'
+                additionalArguments: '--debug'
