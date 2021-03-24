@@ -35,7 +35,7 @@ stages:
               displayName: yuniql run
               inputs:
                 version: 'latest'
-                connectionString: 'Server=alpha101.postgres.database.azure.com;Database={your_database};Port=5432;User Id=srini@alpha101;Password={your_password};'
+                connectionString: 'Server=alpha101.postgres.database.azure.com;Database=test;Port=5432;User Id=srini@alpha101;Password=@Alpha1kills@beta2wins;'
                 workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
                 targetPlatform: 'PostgreSql'
                 additionalArguments: '--debug'
