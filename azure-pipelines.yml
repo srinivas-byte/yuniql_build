@@ -11,6 +11,9 @@ stages:
   jobs:
     - deployment: dev
       displayName: Deploy to aws-postgresql
+
+      environment: aws-dev
+
       strategy:
         runOnce:
           deploy:
@@ -31,8 +34,8 @@ stages:
               displayName: yuniql erase
               inputs:
                 version: 'latest'
-                connectionString: 'Server=queenie.db.elephantsql.com;Port=5432;Database=akccflrf;User=akccflrf;Password=iwH0hwGBezoRe-CiwaSJsg-OOXbRWq8i'
-                workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
+                connectionString: 'Server=alpha101.postgres.database.azure.com;Database={your_database};Port=5432;User Id=srini@alpha101;Password={your_password};'
+                workspacePath: '$(Build.SourcesDirectory)\yuniql\samples\basic-postgresql-sample'
                 targetPlatform: 'postgresql'
                 additionalArguments: '--force --debug'
 
@@ -40,7 +43,7 @@ stages:
               displayName: yuniql run
               inputs:
                 version: 'latest'
-                connectionString: 'Server=queenie.db.elephantsql.com;Port=5432;Database=akccflrf;User=akccflrf;Password=iwH0hwGBezoRe-CiwaSJsg-OOXbRWq8i'
-                workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
+                connectionString: 'Server=alpha101.postgres.database.azure.com;Database={your_database};Port=5432;User Id=srini@alpha101;Password={your_password};'
+                workspacePath: '$(Build.SourcesDirectory)\yuniql\samples\basic-postgresql-sample'
                 targetPlatform: 'PostgreSql'
                 additionalArguments: '--debug'
