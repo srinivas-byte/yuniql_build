@@ -40,3 +40,4 @@ stages:
                 targetPlatform: 'PostgreSql'
                 additionalArguments: '--debug'
                 autoCreateDatabase: 'true'
+    
