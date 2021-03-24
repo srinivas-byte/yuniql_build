@@ -39,3 +39,4 @@ stages:
                 workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
                 targetPlatform: 'PostgreSql'
                 additionalArguments: '--debug'
+                autoCreateDatabase: 'true'
