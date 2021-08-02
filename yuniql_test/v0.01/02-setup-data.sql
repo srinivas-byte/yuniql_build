@@ -20,6 +20,7 @@ INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (16,'Sales Repre
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (17,'Shipping Clerk',2500.00,5500.00);
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (18,'Stock Clerk',2000.00,5000.00);
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (19,'Stock Manager',5500.00,8500.00);
+update jobs set job_title='KILLER' where job_id=10;
  
  
 /*Data for the table departments */
