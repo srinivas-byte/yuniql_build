@@ -35,7 +35,7 @@ stages:
               displayName: yuniql run
               inputs:
                 version: 'latest'
-                connectionString: 'Server=tcp:alpha1011.database.windows.net,1433;Persist Security Info=False;User ID=srini;Password=@Alpha1kills@beta2wins;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+                connectionString: 'Server=tcp:alpha1011.database.windows.net,1433;Initial Catalog=Gitlabtest1;Persist Security Info=False;User ID=srini;Password=@Alpha1kills@beta2wins;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
                 workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
                 targetPlatform: 'sqlserver'
                 additionalArguments: '--debug'
