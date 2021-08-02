@@ -1,6 +1,6 @@
 CREATE TABLE departments (
     department_id Integer PRIMARY KEY,
-    department_name Varchar (30)  NULL,
+    department_name Varchar (30)  NULL,random varchar(30),
     location_id INTEGER,
     FOREIGN KEY (location_id) REFERENCES locations (location_id)
 );
