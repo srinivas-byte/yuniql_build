@@ -7,7 +7,7 @@ CREATE TABLE departments (
  
 CREATE TABLE jobs (
     job_id Integer PRIMARY KEY,
-    job_title CHARACTER VARYING (35) NOT NULL,
+    job_title varchar(35) NOT NULL,
     min_salary Decimal (8, 2),
     max_salary Decimal (8, 2)
 );
