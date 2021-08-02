@@ -35,9 +35,10 @@ stages:
               displayName: yuniql run
               inputs:
                 version: 'latest'
-                connectionString: 'Server=alpha101.postgres.database.azure.com;Database=test;Port=5432;User Id=srini@alpha101;Password=@Alpha1kills@beta2wins;'
+                connectionString: 'Server=tcp:alpha1011.database.windows.net,1433;Persist Security Info=False;User ID=srini;Password=@Alpha1kills@beta2wins;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
                 workspacePath: '$(Build.SourcesDirectory)\yuniql_test'
-                targetPlatform: 'PostgreSql'
+                targetPlatform: 'sqlserver'
                 additionalArguments: '--debug'
                 autoCreateDatabase: 'true'
+                
     
