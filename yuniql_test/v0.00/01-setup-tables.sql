@@ -1,5 +1,5 @@
 CREATE TABLE regions (
-    region_id  PRIMARY KEY,
+    region_id INTEGER PRIMARY KEY,
     region_name varchar(25)
 );
  
@@ -11,7 +11,7 @@ CREATE TABLE countries (
 );
  
 CREATE TABLE locations (
-    location_id  PRIMARY KEY,
+    location_id INTEGER  PRIMARY KEY,
     street_address varchar  (40),
     postal_code varchar  (12),
     city  varchar (30) NOT NULL,
